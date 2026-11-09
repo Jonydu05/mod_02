@@ -1,4 +1,4 @@
-def garden_operations(operation_number: int):
+def garden_operations(operation_number: int) -> None:
     print(f"Testing operation {operation_number}...")
     if operation_number == 0:
         int("abc")
@@ -10,7 +10,7 @@ def garden_operations(operation_number: int):
         "abc" + 123
 
 
-def test_error_types():
+def test_error_types() -> None:
     for i in [0, 1, 2, 3, 4]:
         try:
             garden_operations(i)

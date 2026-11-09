@@ -1,27 +1,27 @@
 class GardenError(Exception):
-    def __init__(self, msg="Unknown garden error"):
+    def __init__(self, msg: str = "Unknown garden error") -> None:
         super().__init__(msg)
     pass
 
 
 class PlantError(GardenError):
-    def __init__(self, msg="Unknown plant error"):
+    def __init__(self, msg: str = "Unknown plant error") -> None:
         super().__init__(msg)
     pass
 
 
 class WaterError(GardenError):
-    def __init__(self, msg="Unknown water error"):
+    def __init__(self, msg: str = "Unknown water error") -> None:
         super().__init__(msg)
     pass
 
 
-def check_plant(plant_name: str, is_wilting: bool):
+def check_plant(plant_name: str, is_wilting: bool) -> None:
     if is_wilting:
         raise PlantError(f"The {plant_name} plant is wilting!")
 
 
-def check_water(tank_level: int):
+def check_water(tank_level: int) -> None:
     if tank_level <= 0:
         raise WaterError("Not enough water in the tank!")
 

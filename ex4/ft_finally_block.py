@@ -1,22 +1,22 @@
 class GardenError(Exception):
-    def __init__(self, msg="Unknown garden error"):
+    def __init__(self, msg: str = "Unknown garden error") -> None:
         super().__init__(msg)
     pass
 
 
 class PlantError(GardenError):
-    def __init__(self, msg="Unknown plant error"):
+    def __init__(self, msg: str = "Unknown plant error") -> None:
         super().__init__(msg)
     pass
 
 
-def water_plant(plant_name):
+def water_plant(plant_name: str) -> None:
     if plant_name != str.capitalize(plant_name):
         raise PlantError(f"Invalid plant name to water: '{plant_name}'")
     print(f"Watering {plant_name}: [OK]")
 
 
-def test_watering_system(plants: list[str]):
+def test_watering_system(plants: list[str]) -> None:
     print("Opening watering system")
     try:
         for plant in plants:

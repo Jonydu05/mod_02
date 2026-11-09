@@ -10,7 +10,7 @@ def input_temperature(temp_str: str) -> int:
         return 0
 
 
-def test_temperature():
+def test_temperature() -> None:
     input_temperature("25")
     input_temperature("abc")
 
